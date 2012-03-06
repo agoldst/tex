@@ -1,0 +1,104 @@
+% DOCUMENT PREAMBLE
+
+% In TeX, anything from a % sign to the end of a line is considered a
+% "comment" and ignored in typesetting.
+
+% The preamble describes the details of layout and typesetting. The
+% description consists of a \documentclass declaration followed by a
+% mixture of \usepackage{} commands and other commands. You can also
+% define your own commands and macros, if you wish.
+
+% Essentials. In LaTeX the first statement should always be
+% \documentclass{}. Here we have chosen 12pt as the main font size and
+% article as the "class" of the document. article and book are the main
+% classes to care about.
+
+\documentclass[12pt]{article}
+
+% That's it for essentials. You could skip directly to DOCUMENT BODY.
+% But I'll demonstrate how to adjust the page design a little.
+
+% MULTILINGUAL SUPPORT
+%
+% Unlike XeLaTeX, LaTeX needs some extra add-ons to support multilingual
+% text. There are actually many roads to multilingual LaTeX, but here
+% is something relatively simple. With this you can enter accented
+% characters as Unicode directly. Support for non-Western-European
+% scripts requires further packages.
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% Margins: use the geometry package.
+% But N.B. standard word-processor margins really make your text
+% body too narrow.
+
+\usepackage{geometry} 
+\geometry{width=6.0 in, height=8.5 in}
+
+% FONTS
+%
+% Again unlike XeLaTeX, pdflatex uses TeX's native font system, which,
+% unfortunately, is entirely disconnected from your system fonts. By
+% default (pdf)latex will set your document in Knuth's Computer Modern
+% font, which is perfectly functional but recognizably distinct from
+% typical text fonts (it was designed to work well in documents with
+% lots of equations and mathematical symbols). LaTeX ships with packages
+% to use its own versions of some popular fonts: of these, I think
+% Palatino is best.
+
+\usepackage{palatino}
+
+% If you desire, use double-spacing for a more open typescript.
+% Again, not lovely from a design standpoint.
+\usepackage{setspace}
+\doublespacing
+
+% The following incantation ensures that no section numbers will be
+% typeset:
+
+\setcounter{secnumdepth}{-2}
+
+% The ``pagestyle'' controls things like headers and footers.
+% ``plain'' style puts the page number at the center bottom.
+\pagestyle{plain}
+
+% END OF PREAMBLE
+
+% DOCUMENT BODY
+\begin{document}
+
+\section{The basics of entering text}
+
+In the body, ordinary text is simply typed in as you normally would. As in HTML, multiple spaces are converted      into  single spaces, and
+a single carriage return is
+ignored. You can space out your text in whatever way makes the most sense to you.
+
+One or more blank lines in the source makes a paragraph break. 
+
+If you wish to insert a linebreak of your own, \\ use a double backslash.
+
+Typographical niceties: ``curly quotes'' double and `single'; the apostrophe's easy; and dashes---the em dash---and the en dash (for numbers, as in 1990--2000).
+
+Here is an example of \emph{emphasis} and of \emph{emphasis with a \emph{further} emphasis within it}.
+
+And the favorite humanist command.\footnote{It's the footnote, of course.}
+
+\section{Remarks on document structure}
+
+Note the way you notate document sections.
+
+\subsection{Environments}
+
+Documents are further structured by environments, which set text differently from ordinary paragraphs.
+\begin{quote}
+A blockquote.
+\end{quote}
+Ne vous inquiétez pas à propos des difficultés des accents et des autres langues. Au moins en ce qui concerne le français, l'allemand, l'espagnol, l'italien. 
+
+Unicode aside, TeX has its own system for entering diacritics using commands: \'a \`a \"o \d s \u c.
+
+% END OF DOCUMENT BODY
+\end{document}  
+% END OF DOCUMENT
+% Nothing here will be typeset
