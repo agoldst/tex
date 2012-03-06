@@ -1,0 +1,98 @@
+% DOCUMENT PREAMBLE
+
+% In TeX, anything from a % sign to the end of a line is considered a
+% "comment" and ignored in typesetting.
+
+% The preamble describes the details of layout and typesetting. The
+% description consists of a \documentclass declaration followed by a
+% mixture of \usepackage{} commands and other commands. You can also
+% define your own commands and macros, if you wish.
+
+% Essentials. In LaTeX the first statement should always be
+% \documentclass{}. Here we have chosen 12pt as the main font size and
+% article as the "class" of the document. article and book are the main
+% classes to care about.
+
+\documentclass[12pt]{article}
+
+% XeLaTeX-SPECIFIC COMMANDS
+
+% Every XeLaTeX document must invoke these packages.
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+% This command, which only works in XeLaTeX, specifies OpenType features
+% for all fonts you use: old-style numerals are a must. Ligatures=TeX
+% allows you type quotation marks and dashes as in ordinary TeX instead
+% of having to manually enter the unicode characters for “ ” etc.
+
+\defaultfontfeatures{Ligatures=TeX,Numbers=OldStyle}
+
+% The next command, the last of our XeLaTeX-only instructions, sets the
+% font. Experiment with other fonts on your system. You may have to do
+% a little trial and error to find out their right names. Note that
+% many fonts will not have old-style numerals, in which case remove the
+% Numbers=OldStyle font feature.
+
+% Every MacOS X installation has this lovely font.
+
+\setmainfont{Hoefler Text}
+
+% END OF XeLaTeX-SPECIFIC COMMANDS
+
+% Next come the margins. Use the geometry package for this.
+\usepackage{geometry} 
+\geometry{width=6.0 in, height=8.5 in}
+
+% If you desire, use double-spacing for a more open typescript.
+\usepackage{setspace}
+\doublespacing
+
+% The following incantation ensures that no section numbers will be
+% typeset:
+
+\setcounter{secnumdepth}{-2}
+
+% The ``pagestyle'' controls things like headers and footers.
+% ``plain'' style puts the page number at the center bottom.
+\pagestyle{plain}
+
+% END OF PREAMBLE
+
+% DOCUMENT BODY
+\begin{document}
+
+\section{The basics of entering text}
+
+In the body, ordinary text is simply typed in as you normally would. As in HTML, multiple spaces are converted      into  single spaces, and
+a single carriage return is
+ignored. You can space out your text in whatever way makes the most sense to you.
+
+One or more blank lines in the source makes a paragraph break. 
+
+If you wish to insert a linebreak of your own, \\ use a double backslash.
+
+Typographical niceties: ``curly quotes'' double and `single'; the apostrophe's easy; and dashes---the em dash---and the en dash (for numbers, as in 1990--2000).
+
+Here is an example of \emph{emphasis} and of \emph{emphasis with a \emph{further} emphasis within it}.
+
+And the favorite humanist command.\footnote{It's the footnote, of course.}
+
+\section{Remarks on document structure}
+
+Note the way you notate document sections.
+
+\subsection{Environments}
+
+Documents are further structured by environments, which set text differently from ordinary paragraphs.
+\begin{quote}
+A blockquote.
+\end{quote}
+Ne vous inquiétez pas à propos des difficultés des accents et des autres langues. Avec Unicode, ça marche tout simplement. (It is true that you have to make sure the font you are using contains all the characters you need. )
+
+% END OF DOCUMENT BODY
+\end{document}  
+% END OF DOCUMENT
+% Nothing here will be typeset
