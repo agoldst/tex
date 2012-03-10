@@ -1,0 +1,4 @@
+test
+*.aux
+*.out
+*.log 

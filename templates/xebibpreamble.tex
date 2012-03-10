@@ -1,0 +1,89 @@
+%&XeLaTeX
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+\usepackage{fontspec}
+	\setmainfont[Ligatures=TeX,Numbers={OldStyle}]{Hoefler Text}
+
+% There are better typefaces, but none of them are universally available
+% I use Garamond, which in the Pro variant has all the nice OpenType features.
+%
+%	\setmainfont[Ligatures=TeX,Numbers={OldStyle}]{Garamond Premier Pro}
+
+\usepackage{xunicode} 
+\usepackage{xltxtra} 
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage[bf,tiny,raggedright]{titlesec}
+\usepackage{titling}
+
+% Biblatex, invoked through the chicago style package. Also requires
+% csquotes. By default, biblatex-chicago uses footnote citation
+% and reconfigures footnotes to have the number in the note not
+% superscripted and followed by a period. Use package option strict
+% to also eliminate the rule between main body and notes, as per
+% the Chicago Manual; use package option footmarkoff to use LaTeX's
+% standard.
+
+\usepackage{csquotes}
+\usepackage[notes,backend=biber]{biblatex-chicago}
+
+% You must specify a bibliography file.
+\bibliography{sources.bib} 
+
+
+
+\setcounter{secnumdepth}{-2}	% Suppress section numbers even with unstarred
+				% (sub)section commands.
+
+% The default geometry is normally preferable
+% But this will make a big text area
+% \geometry{width=6.5 in, height=9.0 in,xetex}
+
+% Same goes for single spacing rather than double
+\singlespacing
+% \doublespacing
+
+\newcommand{\hdrsize}{\small}
+\pagestyle{fancy}
+	\renewcommand{\footrulewidth}{0 pt} % I don't like fancyhdr's rules.
+	\renewcommand{\headrulewidth}{0 pt}
+	\fancyhead{}
+	\rhead{\hdrsize Name \thepage}
+	\fancyfoot{}
+
+% First page will be in ``plain'' style
+\fancypagestyle{plain}{%
+	\fancyhead{}
+	\fancyfoot{}
+	\cfoot{\hdrsize \thepage}
+	\renewcommand{\footrulewidth}{0 pt} 
+	\renewcommand{\headrulewidth}{0 pt}}
+
+% Title reconfiguration via titling package
+
+\setlength{\droptitle}{0 pt} % can move title up or down on page
+
+\pretitle{\begin{center}\bfseries}
+\posttitle{\end{center}}
+\preauthor{\begin{center}}
+\postauthor{\end{center}}
+\predate{\begin{center}}
+\postdate{\end{center}}
+
+
+% Title parameters
+\title{Title}
+\author{Your Name Here}
+\date{\today}
+
+
+\begin{document}
+% First page in ``plain'' style
+\thispagestyle{plain} 
+
+\maketitle
+
+\end{document}
