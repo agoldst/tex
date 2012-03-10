@@ -1,5 +1,13 @@
 % mythesis.cls, modified from yalephd.cls
 %
+% By Andrew Goldstone http://andrewgoldstone.com
+% This file may be freely used and modified by anyone.
+%
+% Last change: March 10, 2012:
+% These introductory comments added.
+%
+% ORIGINAL HEADER FOLLOWS
+%
 % LaTeX2e document class that meets format requirements (as of March
 % 2000) for a doctoral dissertation to be submitted to Yale University,
 % Graduate School of Arts and Sciences.
@@ -14,6 +22,8 @@
 %   Una Smith, Dept. of Ecology and Evolutionary Biology, March 2000
 %   una.smith@yale.edu
 %
+% END OF ORIGINAL HEADER
+%
 % My modifications 2009/06/03
 % Cleaned up the layout code by using the geometry package.
 % Added correct footnote format.
@@ -21,6 +31,7 @@
 % dissertations should have be copyright next year, not this year.      
 % Layout should be in conformity with the October 2006 Yale GSAS        
 % "Preparation and Submission of the Doctoral Dissertation."            
+%
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
