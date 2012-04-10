@@ -45,9 +45,14 @@
 % typical text fonts (it was designed to work well in documents with
 % lots of equations and mathematical symbols). LaTeX ships with packages
 % to use its own versions of some popular fonts: of these, I think
-% Palatino is best.
+% Palatino is best. There is a package called ``palatino'' but the
+% ``official'' way is to use a package that also includes math fonts for
+% palatino:
 
-\usepackage{palatino}
+\usepackage{mathpazo}
+
+% You may also choose a Times-like font with
+% \usepackage{mathptmx}
 
 % If you desire, use double-spacing for a more open typescript.
 % Again, not lovely from a design standpoint.
