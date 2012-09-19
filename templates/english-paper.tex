@@ -1,0 +1,154 @@
+% DOCUMENT PREAMBLE
+
+% Your professor has asked for twelve-point font, right? Here it is.
+\documentclass[12pt]{article}
+
+
+
+% MULTILINGUAL SUPPORT
+%
+% With this you can enter accented characters as Unicode directly. Make
+% sure your text editor saves your file with utf8 encoding. Support for
+% non-Western-European scripts requires further packages, and support
+% for writing long texts in other W. European languages requires loading
+% different options for babel. But this is english-paper.tex, not
+% french-paper.tex.
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% PAGE DESIGN
+%
+% Here's where I'm going to be bold. We're going to let LaTeX choose the
+% measure (i.e. width of the text) instead of using the conventional
+% one-inch margins. But if you want to alter the margins, uncomment the
+% next two lines and set width and height as you wish.
+
+%\usepackage{geometry} 
+%\geometry{width=6.0 in, height=8.5 in}
+
+% And we'll let LaTeX keep its default leading. Instead of
+% double-spacing, we'll have the wide margins of the page for comments
+% by your reader. The amount of text on the page will be pretty close
+% to the same as you'd get from double-spaced with 6-inch measure. But
+% the page will not be ugly. HOWEVER, if you must supply a double-spaced
+% printout to your professor, uncomment the next two lines.
+
+%\usepackage{setspace}
+%\doublespacing
+
+% If you wish to cheat on spacing, you can delete the \doublespacing
+% command and use a different factor, like this:
+%
+% \setstretch{1.5} 
+
+% FONTS
+%
+% So the default LaTeX font, Computer Modern, is not ideal for setting
+% the text of an English paper. It is designed to look good when you are
+% writing equations. There are many, many ways to do different fonts in
+% LaTeX, but this is meant to be a safe template file you can use on any
+% platform, so we are going to stick with built-in options. Of these
+% I think Palatino is the best choice; it's supplied by the mathpazo
+% package.  
+\usepackage{mathpazo}
+
+% You could also choose a Times-like font with this line instead:
+%
+% \usepackage{mathptmx}
+%
+% But remember that Times is not really meant for setting full pages of
+% text. It was designed to be readable in tight newspaper columns on
+% newsprint. It's pretty painful for the screen and not great for white
+% paper and inkjet/laser toner.
+
+% HEADERS AND FOOTERS
+% The ``pagestyle'' controls things like headers and footers.
+% fancyhdr allows finer control.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Now we modify this ``fancy'' style.
+% Fancyheader puts rules on your page: too heavy-handed.
+\renewcommand{\footrulewidth}{0 pt}
+\renewcommand{\headrulewidth}{0 pt}
+% These control the left, center, and right headers and footers 
+% On a paper, just have your name and the page in the upper right.
+\lhead{}
+\chead{}
+\rhead{\small YOUR NAME HERE \thepage}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+% A little extra refinement: the first page should have different headers
+% Which we can do by redefining the ``plain'' pagestyle and applying it to p. 1
+\fancypagestyle{plain}{%
+    \fancyhead{}
+    \fancyfoot{}
+    \cfoot{\hdrsize \thepage}
+    \renewcommand{\footrulewidth}{0 pt} 
+    \renewcommand{\headrulewidth}{0 pt}}
+
+% Simpler alternative:
+% ``plain'' style puts the page number at the center bottom.
+% \pagestyle{plain}
+
+% BIBLIOGRAPHY: the shortcut
+%
+% You should always cite your sources carefully. In this most
+% basic template, I suggest simply typing up a Works Cited page or
+% bibliography manually. Ultimately it's better to use the biblatex
+% package to generate a bibligraphy, and it's also good to develop a
+% database of all the sources you use over time. But since it takes some
+% effort to learn to use biblatex, I think paper writers should get
+% started on LaTeX without it. So all you need to type up a bibliography
+% manually is two things: something to typeset hanging paragraphs (first
+% line set flush left, subsequent lines indented), and a command to
+% produce a long dash for repeated author names.
+
+\usepackage{hanging}
+\newcommand{\threeEmDash}{---------}
+
+% The following incantation ensures that no section numbers will be
+% typeset:
+
+\setcounter{secnumdepth}{-2}
+
+
+% END OF PREAMBLE
+
+% DOCUMENT BODY
+\begin{document}
+% To get ``plain'' pagestyle on p. 1
+\thispagestyle{plain}
+
+\begin{center}
+\textbf{Title of Paper: Professors Like Titles}
+\end{center}
+
+\noindent First paragraph: not indented.
+
+
+\begin{quote}
+A blockquote.
+\end{quote}
+
+% You can use BibLaTeX to automatically generate citations and bibliography,
+% and indeed you should,
+% but this is meant to be a more basic file, and if you are writing a paper about only one source, it's okay to do this by hand. Here's how:
+
+\section{Works Cited}
+
+\begin{hangparas}{\parindent}{1}
+Lastname, Firstname. \emph{Title}. Location: Publisher, Year. Print.
+
+\threeEmDash. \emph{Title}. Location: Publisher, Year. Medium.
+\end{hangparas}
+
+% END OF DOCUMENT BODY
+\end{document}  
+% END OF DOCUMENT
+% Nothing here will be typeset
+
+
+
