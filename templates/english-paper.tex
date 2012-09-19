@@ -83,9 +83,11 @@
 % A little extra refinement: the first page should have different headers
 % Which we can do by redefining the ``plain'' pagestyle and applying it to p. 1
 \fancypagestyle{plain}{%
-    \fancyhead{}
+    \lhead{}
+    \chead{}
+    \rhead{\small YOUR NAME HERE \\ THE DATE}
     \fancyfoot{}
-    \cfoot{\hdrsize \thepage}
+    \cfoot{\small \thepage}
     \renewcommand{\footrulewidth}{0 pt} 
     \renewcommand{\headrulewidth}{0 pt}}
 
@@ -132,6 +134,9 @@
 \begin{quote}
 A blockquote.
 \end{quote}
+
+% an example of a forced pagebreak, should you ever need it
+\newpage
 
 % You can use BibLaTeX to automatically generate citations and bibliography,
 % and indeed you should,
