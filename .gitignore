@@ -1,4 +1,6 @@
 test
+
+*.pdf
+*.log
 *.aux
 *.out
-*.log 
