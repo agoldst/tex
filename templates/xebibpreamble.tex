@@ -77,6 +77,22 @@
 \author{Your Name Here}
 \date{\today}
 
+% The cheap way to solve overfull hboxes:
+% \setlength{\emergencystretch}{2 em}
+
+% hyperref for hyperlinks with \href and \url commands
+% and for producing richer PDFs (including footnote hyperlinks)
+% xcolor supplies more named colors
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+  pdftitle={PDF title},
+  pdfauthor={Your Name Here},
+  bookmarks, bookmarksopen,
+  colorlinks=true,urlcolor=blue,citecolor=BlueViolet,
+  xetex]{hyperref}
+
+% URLs in same typeface as body text
+\urlstyle{same}
 
 \begin{document}
 % First page in ``plain'' style
