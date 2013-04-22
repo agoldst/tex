@@ -18,6 +18,6 @@ Files to play with if you are new to LaTeX.
 
 ## More
 
-I'm sporadically blogging about humanities TeXing at [humtex.wordpress.com](http://humtex.wordpress.com).
+I'm sporadically blogging about humanities TeXing on my personal blog at [andrewgoldstone.com](http://andrewgoldstone.com/blog/categories/tex).
 
 
