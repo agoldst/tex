@@ -17,3 +17,7 @@ A sample document showing how students could set up a paper for an undergraduate
 ## english-paper.tex
 
 The same sample English paper, but setup for pdflatex processing (in case xelatex doesn't work on your system).
+
+## Makefile
+
+A simple Makefile for with examples of processing tex sources. I often use `make` to manage processing bigger documents. The Makefile also has some comments on the `latexmk` utility.
