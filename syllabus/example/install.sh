@@ -1,6 +1,6 @@
 
 src_dir=..
 
-cp $src_dir/{Makefile,html_clean,syllabus-4ht.cfg,vc,vc-git.awk} .
+cp $src_dir/{Makefile,html_clean,html_clean.hs,syllabus-4ht.cfg,vc,vc-git.awk} .
 
 

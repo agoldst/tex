@@ -1,4 +1,3 @@
-
 # Requirements
 
 Because this course aims to introduce methodologies which many students will not have encountered, the course does not require an article-length seminar paper. It rather seeks to lay the foundation for article- (or book-) length work that makes serious use of sociological theories and methods. There will be two shorter assignments: 
