@@ -83,7 +83,7 @@ clean:
 	# ghc
 	rm -f *.hi *.ho *.o
 	# tex4ht: specific files
-	rm -f syllabus-4ht.css syllabus-4ht.pdf
+	rm -f syllabus-4ht.css syllabus-4ht.pdf syllabus-4ht.html
 	# tex4ht-tweaked sources
 	rm -rf $(4ht_src)
 
