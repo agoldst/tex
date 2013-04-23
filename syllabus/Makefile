@@ -16,8 +16,6 @@ NON_SYLLABUS_FILES := README.md
 # 1. use pandoc's ability to read and write its syntax tree in JSON
 # 2. rewrite the cleaner script in something friendlier, like Perl
 # 3. generate pull request
-HTML_CLEAN := ./html_clean
-
 html_clean: html_clean.hs
 	ghc --make $<
 
@@ -69,8 +67,8 @@ syllabus-4ht.html: syllabus-4ht.pdf syllabus-4ht.cfg
 	htlatex syllabus-4ht.tex syllabus-4ht.cfg " -cunihtf -utf8" "-cvalidate"
 
 # syllabus.html is the cleaned-up version
-syllabus.html: syllabus-4ht.html
-	$(HTML_CLEAN) < $< > $@
+syllabus.html: syllabus-4ht.html html_clean
+	./html_clean < $< > $@
 
 clean:
 	rm -f *.aux *.log
@@ -82,6 +80,8 @@ clean:
 	rm -f *.bbl *.bcf *.blg *.run.xml
 	# tex4ht
 	rm -f *.4ct *.4tc *.dvi *.idv *.lg *.tmp *.xref
+	# ghc
+	rm -f *.hi *.ho *.o
 	# tex4ht: specific files
 	rm -f syllabus-4ht.css syllabus-4ht.pdf
 	# tex4ht-tweaked sources
@@ -89,7 +89,7 @@ clean:
 
 clean_outputs:
 	# final outputs
-	rm -f syllabus.pdf syllabus.html
+	rm -f syllabus.pdf syllabus.html html_clean
 
 reallyclean: clean clean_outputs
 
