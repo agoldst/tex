@@ -1,0 +1,45 @@
+% syllabus-4ht.tex: this file determines what goes in syllabus.html.
+%
+% Unlike syllabus.tex, this file omits all the layout code in the preamble,
+% which tex4ht tends to get unhappy about.
+%
+% N.B. especially that this is not meant to be run through xelatex but through
+% regular pdflatex (or latex). That will generate the aux file necessary
+% to then run it through htlatex.
+%
+% This file expects web-ified versions of each of the syllabus source files
+% under a directory 4ht/ .
+
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel} 
+\usepackage[utf8]{inputenc} 
+\setcounter{secnumdepth}{-2} 
+\pagestyle{empty}
+
+\usepackage{csquotes}
+\usepackage[notes,annotation,short,hyperref=false,backend=biber]{biblatex-chicago}
+\DeclareFieldFormat{annotation}{#1\isdot}
+\bibliography{course.bib}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=BlueViolet]{hyperref}
+\usepackage{hanging}
+
+
+\begin{document}
+
+A printable PDF version of the course syllabus is available here: \href{http://course.example.edu/syllabus.pdf}{syllabus.pdf}.
+
+\input{4ht/overview.tex}
+\input{4ht/goals.tex}
+\input{4ht/reqs.tex}
+\input{4ht/schedule.tex}
+\input{4ht/ack.tex}
+
+
+\nocite{*}
+\printbibliography[notkeyword=supplemental,title=Readings]
+
+\end{document}
+

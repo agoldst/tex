@@ -1,0 +1,95 @@
+%&XeLaTeX
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+\usepackage{fontspec}
+	\setmainfont[Ligatures=TeX,Numbers=OldStyle,%
+		BoldFont={* Semibold}]{Garamond Premier Pro}
+\usepackage{xunicode}
+\usepackage{xltxtra} 
+
+\usepackage{hanging}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{xkeyval}
+\usepackage[bf,small,raggedright,compact]{titlesec}
+\usepackage{enumerate}
+
+\input{vc.tex}
+
+\usepackage{csquotes}
+\usepackage[notes,annotation,short,backend=biber]{biblatex-chicago}
+\DeclareFieldFormat{annotation}{#1\isdot}
+\renewcommand{\bibfont}{\footnotesize}
+\bibliography{course.bib}
+
+\setcounter{secnumdepth}{-2}	% Suppress section numbers even with unstarred
+				% (sub)section commands.
+
+%\geometry{width=6.5 in, height=9.0 in, xetex}
+
+\pagestyle{fancy}
+	\renewcommand{\footrulewidth}{0 pt} % I don't like fancyhdr's rules.
+	\renewcommand{\headrulewidth}{0 pt}
+	\fancyhead{}
+	\lhead{\small 350:596}
+	\chead{\small Rutgers University, New Brunswick}
+	\rhead{\small Spring 2013}
+	\fancyfoot{}
+        \lfoot{\small }
+	\cfoot{\thepage}
+        \rfoot{\small Last revised \VCDateUSA}
+
+
+\singlespacing
+\setlength{\parindent}{0 pt}
+\setlength{\parskip}{0.25\baselineskip}
+
+\setlength{\emergencystretch}{2 em}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[
+  pdftitle={350:596 Spring 2013},
+  pdfauthor={Andrew Goldstone},
+  bookmarks, bookmarksopen,
+  colorlinks=true,urlcolor=blue,citecolor=BlueViolet,
+  xetex]{hyperref}
+\urlstyle{same}
+
+
+\usepackage{agoldstmacros}
+
+
+
+\begin{document}
+
+\textbf{\large
+Author, Reader, Field \\
+Literary Sociologies of Modernism and the Twentieth Century%
+}
+
+\url{http://arf.blogs.rutgers.edu}
+
+Andrew Goldstone (\url{andrew.goldstone@rutgers.edu})  \\
+Thursdays 1:10-4:00 p.m.\ in Murray 207  \\
+Office hours: Mondays 2:30--4:30 p.m.\ in Murray 031 \\
+
+\input{out/overview.tex}
+\newpage
+\input{out/goals.tex}
+\input{out/reqs.tex}
+\input{schedule.tex}
+\newpage
+\input{out/blogging.tex}
+\vfill
+\footnotesize
+\input{out/ack.tex}
+
+\newpage
+
+\nocite{*}
+\printbibliography[notkeyword=supplemental,title=Readings]
+
+\end{document}
+

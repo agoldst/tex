@@ -1,0 +1,10 @@
+# Overview
+
+The sociological study of literary practices---reading, writing, and circulation---has become one of the most important areas of new work in the last decade of literary studies. Though such approaches have ranged widely, recent work in this vein has, despite the presentist trend of social science in general, been particularly interested in modernism. Indeed, the most important sociological theory of literature, that of Pierre Bourdieu, is nothing other than a theory of modernism. This course proposes to explore the conjunction of sociological method and modernist literature as more than a coincidence. We will read key recent works in literary sociology, but we will also return to imaginative writings of the early twentieth century to see how they demand, and sometimes anticipate, an analysis in terms of institutions, organizations, hierarchies of power and status, symbolic interactions, classes, and fields of relation.
+
+The aim of the course is not, however, primarily to offer a "reading" of modernism in terms of "social" themes but to facilitate students' own sociologically-informed work on literature. The so-called "modernist period" is only a case study, and we will reflect on the ways in which the prominence of modernism in literary-sociological work---particularly in the Bourdieuean tradition---may be a limitation. Reading beyond canonical modernism, we will challenge and extend literary sociology's treatment of nation, race, cultural capital, and readership.
+
+Instead of attempting a comprehensive survey of approaches, this course focuses on three particularly active and productive areas of inquiry in turn: the author as an agent in a field of relations, the institutional forms of world literature, and the development of stratified reading publics. The reading for each unit includes extensive theoretical and secondary sources as well as primary texts.
+
+This course fulfills the graduate program's A5 distributional requirement (Twentieth-Century Studies).
+
