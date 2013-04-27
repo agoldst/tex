@@ -74,6 +74,8 @@ clean:
 	rm -f *.aux *.log
 	# generated TeX sources
 	rm -rf $(input_dir)
+	# vc
+	rm -f vc.tex
 	# hyperref
 	rm -f *.out 
 	# biber
