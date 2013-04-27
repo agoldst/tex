@@ -37,10 +37,16 @@ clean_dls (dl@(DefinitionList items):bs)
 clean_dls (b:bs) = b:(clean_dls bs)
 clean_dls [] = []
 
--- two passes needed because the two transformations
--- don't have the same type and so can't be lifted by a single bottomUp 
+-- tex4ht's html tends to put empty paragraphs after various block
+-- elements. A bunch of <p></p> pairs aren't really a problem, but
+-- wordpress hates them, so let's throw 'em out
+strip_empty_paras :: [Block] -> [Block]
+strip_empty_paras = filter (/=(Para []))
+
+-- two passes needed because not all the transformations have the same
+-- type and so can't be lifted by a single bottomUp
 tx_pandoc :: Pandoc -> Pandoc
-tx_pandoc = (bottomUp clean_dls) . (bottomUp reduce_header)
+tx_pandoc = (bottomUp (clean_dls . strip_empty_paras)) . (bottomUp reduce_header)
 
 -- ensure smart quotes
 main = interact
