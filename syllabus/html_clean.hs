@@ -2,7 +2,7 @@
 import Text.Pandoc
 
 {-
-This script uses the Pandoc library to do two transformations
+This script uses the Pandoc library to do the transformations
 needed on the way from my mixed markdown/LaTeX syllabus sources to a
 single HTML file: 
 
@@ -12,6 +12,9 @@ lists and replacing them with regular old paragraphs. This will eat any
 other dl's in the source, so beware. 
 
 2. Reduce header levels from h3 to h2, h2 to h1 as needed.
+
+3. Strip out the contentless <p></p> pairs tex4ht produces, in some obscure way, after non-paragraph block elements.
+
 The script is a standard filter: input on stdin, output on stdout.
 
 See <http://andrewgoldstone.com/blog/http://andrewgoldstone.com/blog/2013/02/12/4htweak> and <http://andrewgoldstone.com/blog/http://andrewgoldstone.com/blog/2013/04/21/more-on-pandoc>.
