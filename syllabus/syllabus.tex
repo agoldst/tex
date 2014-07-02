@@ -56,8 +56,16 @@
 \usepackage{csquotes}
 \usepackage[notes,annotation,short,backend=biber]{biblatex-chicago}
 \DeclareFieldFormat{annotation}{#1\isdot}
-\renewcommand{\bibfont}{\footnotesize}
-\bibliography{course.bib}
+
+% Swaps biblatex-chicago's default for \autocite from \footcite to \cite.
+% This way, when pandoc converts [@key] citations to \autocite, you'll
+% get inline (short) citations.
+\DeclareAutoCiteCommand{footnote}{\cite}{\cites}
+
+% Bibliography will print \small
+\renewcommand{\bibfont}{\small}
+
+\addbibresource{course.bib}
 
 \setcounter{secnumdepth}{-2}	% Suppress section numbers even with unstarred
 				% (sub)section commands.

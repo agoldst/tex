@@ -27,16 +27,14 @@ texs := $(patsubst %.md,$(input_dir)/%.tex,$(mds))
 
 $(texs): $(input_dir)/%.tex: %.md
 	mkdir -p $(input_dir)
-	pandoc -o $@ $<
+	pandoc -o $@ --biblatex $<
 
 vc:
 	./vc
 
 # also, in order to ensure ./vc script is run, dependency on phony vc target
 syllabus.pdf: syllabus.tex $(texs) course.bib vc
-	xelatex $<
-	biber $(basename $<)
-	xelatex $<
+	latexmk -xelatex $(basename $@)
 
 4ht_src := 4ht
 4ht_texs := $(patsubst $(input_dir)/%.tex,$(4ht_src)/%.tex,$(texs))
