@@ -2,4 +2,4 @@
 
 Thanks.
 
-*Sample license text:* This syllabus is available for duplication or modification for other courses and non-commercial uses under a [CC BY-NC 3.0](http://creativecommons.org/licenses/by-nc/3.0/) license. Acknowledgment with attribution is requested.
+*Sample license text:* This syllabus is available for duplication or modification for other courses and non-commercial uses under a [Creative Commons Attribution-NonCommercial 4.0 International](http://creativecommons.org/licenses/by-nc/4.0/) license. Acknowledgment with attribution is requested.
