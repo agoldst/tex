@@ -26,6 +26,7 @@
 \usepackage{xltxtra} 
 
 \usepackage{hanging}
+\usepackage{multicol}
 \usepackage{fancyhdr}
 \usepackage{geometry}
 \usepackage{setspace}
@@ -119,10 +120,18 @@ Professor Your Name Here \\
 \input{input/schedule.tex}
 
 % Include all texts in bibliography database
+% (but we'll skip any with keyword ``supplemental'' below)
 \nocite{*}
 
-% But skip any with keyword ``supplemental''
-\printbibliography[notkeyword=supplemental,title=Readings]
+% Two-column layout is better, unless you have to include a lot of URLs
+\begin{multicols}{2}[%
+    \section{Readings} \textsc{isbn}s are included to help students ordering books online.]
+\printbibliography[notkeyword=supplemental,heading=none]
+\end{multicols}
+
+% one-column layout:
+
+% \printbibliography[notkeyword=supplemental,title=Readings]
 
 \vfill
 \footnotesize
