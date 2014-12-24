@@ -20,6 +20,12 @@ Just a curio here, for now: the documentclass used to typeset my Ph.D. thesis.
 
 Files to play with if you are new to LaTeX.
 
+## Extra scripts
+
+In [bin](bin/), some filters for pandoc. I keep these in my PATH.
+
+[latexmkrc](latexmkrc): a config file for the invaluable `latexmk` build tool. This is my `~/.latexmkrc'.
+
 ## More
 
 I'm sporadically blogging about humanities TeXing on my personal blog at [andrewgoldstone.com](http://andrewgoldstone.com/blog/categories/tex).
