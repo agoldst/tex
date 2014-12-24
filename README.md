@@ -10,7 +10,7 @@ Model source files of the kind I use as a template for new documents.
 
 ## Syllabus framework
 
-In ``syllabus/`` you can see how I make a course syllabus in LaTeX. This is a rather elaborate setup which allows me to make parallel PDF and HTML versions of the same syllabus.
+In [syllabus](syllabus/) you can see how I make a course syllabus in LaTeX. This is a rather elaborate setup which allows me to make parallel PDF and HTML versions of the same syllabus.
 
 ## Class files
 
