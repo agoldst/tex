@@ -101,18 +101,23 @@ all: $(pdfs) $(talk_nup)
 
 all_key: all talk-slides.key
 
-# clean up everything except pdfs and keynote files 
+# clean up everything except pdfs, keynote, and knitr cache
 clean:
 	latexmk -c
-	rm -rf *.nav *.snm
-	rm -rf talk.tex slides.tex
+	rm -rf *.nav *.snm *.vrb
+	rm -rf talk.md
+	rm -rf talk*.tex
 
-# clean up everything including pdfs and keynote files 
+# clean up everything
 reallyclean:
 	latexmk -C
-	rm -rf talk.tex slides.tex
-	rm -rf *.nav *.snm
+	rm -rf cache figure
+	rm -rf talk-tikzDictionary
+	rm -rf talk.md
+	rm -rf talk*.tex
+	rm -rf *.nav *.snm *.vrb
 	rm -rf talk-slides.key
+	rm -rf talk*.pdf
 	rm -rf $(talk_nup)
 
 .DEFAULT_GOAL := all
