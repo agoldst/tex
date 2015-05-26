@@ -1,0 +1,76 @@
+\usepackage{pgfpages}
+%\setbeamertemplate{note page}[plain]
+
+% notes layout copied from http://www.guidodiepen.nl/wp-content/uploads/2009/07/handoutWithNotes.sty
+% see http://www.guidodiepen.nl/2009/07/creating-latex-beamer-handouts-with-notes/
+
+\pgfpagesdeclarelayout{2 on 1 with notes landscape}{
+    \edef\pgfpageoptionheight{\the\paperheight}
+    \edef\pgfpageoptionwidth{\the\paperwidth}
+    \edef\pgfpageoptionborder{0pt}
+}{
+    \setkeys{pgfpagesuselayoutoption}{landscape}
+    \pgfpagesphysicalpageoptions{%
+        logical pages=4,%
+        physical height=\pgfpageoptionheight,%
+        physical width=\pgfpageoptionwidth,%
+    %      last logical shipout=3%
+        last logical shipout=2%
+    }
+    \pgfpageslogicalpageoptions{1}{%
+        scale=1,
+        center=\pgfpoint{.3\pgfphysicalwidth}{.75\pgfphysicalheight}%
+    }%
+    \pgfpageslogicalpageoptions{2}{%
+        scale=1,
+        center=\pgfpoint{.3\pgfphysicalwidth}{.25\pgfphysicalheight}%
+    }% 
+    \pgfpageslogicalpageoptions{3}{%
+       border shrink=\pgfpageoptionborder,%
+       resized width=.7\pgfphysicalwidth,%
+       resized height=.4\pgfphysicalheight,%
+       center=\pgfpoint{.75\pgfphysicalwidth}{.3\pgfphysicalheight},%
+       copy from=3
+    }% 
+    \pgfpageslogicalpageoptions{4}{%
+        border shrink=\pgfpageoptionborder,%
+        resized width=.7\pgfphysicalwidth,%
+        resized height=.4\pgfphysicalheight,%
+        center=\pgfpoint{.75\pgfphysicalwidth}{.8\pgfphysicalheight},%
+        copy from=4
+    }%
+    \AtBeginDocument{
+        \newbox\notesbox
+        \setbox\notesbox=\vbox{
+            \hsize=\paperwidth
+            \vskip-1in\hskip-1in\vbox{
+                \vskip1cm
+                %Notes\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth\vskip1cm
+                %\hrule width\paperwidth
+            }
+        }
+        \pgfpagesshipoutlogicalpage{3}\copy\notesbox
+        \pgfpagesshipoutlogicalpage{4}\copy\notesbox
+    }
+}
+
+
+
+
+\pgfpagesuselayout{2 on 1 with notes landscape}[letterpaper,%
+border shrink=0.125in]%,scale=0.5]%,%
+    %center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight]
+
+\input{macros.tex}
+

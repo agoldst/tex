@@ -1,0 +1,101 @@
+---
+title: Talk of Talks
+author: Talky Talker
+date: Day of the Talk
+---
+
+```{r setup, include=F, cache=F}
+library(knitr)
+# attempt to set a reasonable code output textwidth
+options(width=44)
+opts_knit$set(width=44)
+opts_chunk$set(
+    comment=NA, # no comment chars decorating code output
+    collapse=T, # multiple statements and output collapsed together
+    dev="tikz", # TikZ graphs: nice but slow
+    fig.width=4.5, fig.height=2.75,   # beamer cards are 128 mm x 96 mm
+    size ='footnotesize',             # gets zoomed up to something reasonable
+    dev.args=list(pointsize=9),
+    message=F, warning=F,             # quit your chatter, R
+    error=T,    # stop on error: can get annoying
+    echo=F,     # hide chunk code by default
+    cache=T,
+    autodep=T)
+
+# code output environment hook
+knit_hooks$set(output=function (x, options) {
+    paste(c("\\begin{ROutput}",
+            sub("\n$", "", x),
+            "\\end{ROutput}",
+            ""),
+          collapse="\n")
+})
+
+# tikzDevice setup: install the tikzDevice package
+options(tikzDefaultEngine="xetex")
+
+# tikzDevice + xelatex
+options(tikzXelatexPackages=c(
+    "\\usepackage{tikz}\n",
+    "\\usepackage[active,tightpage,xetex]{preview}\n",
+    "\\usepackage{fontspec,xunicode}\n",
+    "\\setmainfont{Gill Sans}\n",
+    "\\PreviewEnvironment{pgfpicture}\n",
+    "\\setlength\\PreviewBorder{0pt}\n"))
+
+# load your favorite libraries
+library(ggplot2)
+library(xtable)
+
+# import code from this file as chunks, to be included just below
+read_chunk("slide-utils.R")
+```
+
+```{r dark-plot-theme, include=F}
+```
+
+```{r print-tabular, include=F}
+```
+
+# an example text slide
+
+
+> - with an incremental
+> - build
+
+\note{<1>}{
+
+And different notes on the first
+
+}
+
+\note{<2>}{
+
+and second increments.
+
+}
+
+# an example table
+
+```{r results="asis"}
+print_tabular(mtcars[1:5, 1:5],
+              floating=T,
+              caption="Something about cars")
+```
+
+# an example graphic
+
+```{r graph, fig.cap="I think that I shall never see"}
+ggplot(trees, aes(Girth, Height)) +
+    geom_point(color="white") +
+    plot_theme()
+```
+
+# example code display
+
+```{r code, echo=T}
+cor(anscombe$x1, anscombe$y1)
+cor(anscombe$x2, anscombe$y2)
+```
+
+Definitely don't need to visualize.

@@ -1,0 +1,11 @@
+talk.md
+talk-handout.tex
+talk-slides.tex
+talk.tex
+
+*.toc
+*.vrb
+*-tikzDictionary
+
+cache
+figure
