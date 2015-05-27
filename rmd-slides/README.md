@@ -40,7 +40,7 @@ make talk-handout.pdf
 
 To make all slide and note PDFs at once, use `make` all by itself. 
 
-I discuss how the bits and pieces work together in a blog post: ["Programmatic Lecture Slides Made Even More Difficult with R Markdown."](http://andrewgoldstone.com/blog/2015/12/27/rmd-slides) This builds on the [framework for markdown-based lecture slides](../lecture-slides), described in ["Easy Lecture Slides Made Difficult with Pandoc and Beamer."](http://andrewgoldstone.com/blog/2014/12/24/slides/) You can use the Makefile in the latter as a starting point if you want to generalize the model here for a whole series of lectures (e.g. for a course).
+I discuss how the bits and pieces work together in a blog post: ["Programmatic Lecture Slides Made Even More Difficult with R Markdown."](http://andrewgoldstone.com/blog/2015/05/27/rmd-slides) This builds on the [framework for markdown-based lecture slides](../lecture-slides), described in ["Easy Lecture Slides Made Difficult with Pandoc and Beamer."](http://andrewgoldstone.com/blog/2014/12/24/slides/) You can use the Makefile in the latter as a starting point if you want to generalize the model here for a whole series of lectures (e.g. for a course).
 
 ## Dependencies
 
