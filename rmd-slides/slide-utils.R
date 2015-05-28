@@ -1,4 +1,103 @@
+# ---- code-hook ----
+ 
+# code output environment hook
+knit_hooks$set(output=function (x, options) {
+    paste(c("\\begin{ROutput}",
+            sub("\n$", "", x),
+            "\\end{ROutput}",
+            ""),
+          collapse="\n")
+})
+
+# ---- plot-placement-hook ----
+ 
+# Plot placement and resizing hook
+#
+# Allows you to use the textpos grid for placing and sizing plots on
+# slides. Example usage below.
+#
+# This gives us some new options and changes the meaning of two others:
+#
+# out.width, out.height: reinterpreted as units on the textpos grid.
+# N.B. this sets the scaling by pdflatex of an image file whose
+# generated dimensions are set by fig.width and fig.height (always
+# inches).
+#
+# textblock_width: width of the block in textpos grid units
+#
+# textblock_pos: 2-element vector of grid coordinates of the textblock
+#
+# center: Boolean: enclose graphic within center environment?
+#
+# inside_textblock: don't generate textblock environment, just the
+# \includegraphics line (useful if, e.g., you write out the environment
+# \begin and \end yourself and stick the code chunk between them)
+#
+# Grid positioning only happens if inside_textblock=T or textblock_width
+# is specified. Otherwise we revert to knitr's normal behavior. Grid
+# positioning also always makes graphics inline. Use inside_textblock=T
+# and enclose it in a figure environment yourself if you want to combine
+# the textblock and the figure environment (you probably don't).
+#
+# The main use for this is probably to place a single figure on the grid
+# instead of in the normal flow of elements.
+#
+# N.B. the default knitr plot output hook for LaTeX responds to many
+# more options than this does. But in my workflow we are knitting to
+# markdown, not LaTeX. That's a simplifying decision in some ways but
+# with some costs in flexibility.
+
+plot_hook_default <- knit_hooks$get("plot")
+knit_hooks$set(plot=function (x, options) {
+    inside <- options$inside_textblock
+    pos <- options$textblock_pos
+    b <- ""
+    e <- ""
+    if (is.null(inside)) {
+        inside <- F
+    }
+    if (is.numeric(options$textblock_width) || inside) {
+        if(!inside && is.numeric(pos) && length(pos) == 2) {
+            b <- paste0(
+                "\\begin{textblock}{", options$textblock_width, "}(",
+                pos[1], ",", pos[2], ")\n"
+            )
+            e <- "\\end{textblock}\n"
+        }
+
+        if (!is.null(options$center) && options$center) {
+            b <- paste0(b, "\\begin{center}\n")
+            e <- paste0("\n\\end{center}", e)
+        }
+
+        if (is.null(options$out.width) && is.null(options$out.height)) {
+            opt <- ""
+        } else if (is.null(options$out.width)) {
+            opt <- paste0("[height=", options$out.height, "\\TPVertModule]")
+        } else if (is.null(options$out.height)) {
+            opt <- paste0("[width=", options$out.width, "\\TPHorizModule]")
+        } else {
+            opt <- paste0("[width=", options$out.width, "\\TPHorizModule],",
+                          "[height=", options$out.height, "\\TPVertModule]")
+        }
+
+        # filename munging here taken from knitr:::hook_plot_md_base
+        # just in case this will help with rmarkdown's file management
+        base_url <-opts_knit$get("base.url")
+        if (is.null(base_url)) {
+            base_url <- ""
+        }
+        gfx <- paste0("\\includegraphics", opt, "{", base_url, x, "}\n")
+        paste0(b, gfx, e)
+    }
+    else {
+        plot_hook_default(x, options)
+    }
+})
+
+
 # ---- dark-plot-theme ----
+
 plot_theme <- function(base_size=9, base_family="",
                        dark="gray10", light="white") {
   theme_grey(base_size=base_size, base_family=base_family) %+replace%
