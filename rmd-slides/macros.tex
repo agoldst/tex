@@ -24,6 +24,10 @@
 % eliminate silly beamer navigation line at bottom of slides
 \setbeamertemplate{navigation symbols}{}
 
+% override dopey pandoc beamer template table-caption setting
+\setbeamertemplate{caption}[default]
+\setbeamertemplate{caption label separator}[default]
+
 % print_tabular/xtable generates tables with these packages
 \usepackage{booktabs}
 \usepackage{longtable}
