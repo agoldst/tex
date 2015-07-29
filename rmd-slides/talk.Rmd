@@ -74,7 +74,7 @@ and second increments.
 
 # an example table
 
-```{r results="asis"}
+```{r}
 print_tabular(mtcars[1:5, 1:5],
               floating=T,
               caption="Something about cars")
