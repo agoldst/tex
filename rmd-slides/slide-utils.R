@@ -200,10 +200,14 @@ print_tabular <- function (x, digits=0,
     alignment <- paste("l", alignment, sep="")
     xt <- xtable(x, digits=digits, align=alignment,
                  caption=caption, label=label)
-    print(xt, comment=F, include.rownames=F,    # no row names, ever
-          include.colnames=include.colnames,
-          floating=floating, booktabs=T,
-          tabular.environment=ifelse(floating, "tabular", "longtable"),
-          ...)
+    ll <- print(xt, comment=F, include.rownames=F,    # no row names, ever
+                include.colnames=include.colnames,
+                floating=floating, booktabs=T,
+                tabular.environment=ifelse(floating, "tabular", "longtable"),
+                print.results=F,
+                ...)
+    # xtable latex captured and returned this way so that you don't need to
+    # set results="asis" in the chunk options
+    knitr::asis_output(paste(ll, collapse="\n"))
 }
 
