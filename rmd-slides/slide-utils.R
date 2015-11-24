@@ -211,3 +211,27 @@ print_tabular <- function (x, digits=0,
     knitr::asis_output(paste(ll, collapse="\n"))
 }
 
+
+
+
+# ---- print-lm ----
+
+# a shortcut for printing out linear models as tables
+
+print_lm <- function (...) {
+    p <- list(dep.var.caption="",
+              omit.stat=c("ser"),   # no residual SE, but keep F
+              omit.table.layout="n",
+              table.placement="H",
+              single.row=T,
+              header=F,
+              report="vscp")
+    dots <- list(...)
+    p[names(dots)] <- dots
+
+    # stargazer is irresponsible and directly `cat`s its output
+    sgz <- capture.output(do.call(stargazer, p))
+    # this function, from knitr, shortcuts the need to set `results="asis"`
+    knitr::asis_output(paste(sgz, collapse="\n"))
+}
+
