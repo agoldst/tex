@@ -1,4 +1,4 @@
-# ---- code-hook ----
+## ---- code-hook ----
  
 # code output environment hook
 knit_hooks$set(output=function (x, options) {
@@ -9,7 +9,7 @@ knit_hooks$set(output=function (x, options) {
           collapse="\n")
 })
 
-# ---- plot-placement-hook ----
+## ---- plot-placement-hook ----
  
 # Plot placement and resizing hook
 #
@@ -96,7 +96,7 @@ knit_hooks$set(plot=function (x, options) {
 })
 
 
-# ---- dark-plot-theme ----
+## ---- dark-plot-theme ----
 
 plot_theme <- function(base_size=9, base_family="",
                        dark="gray10", light="white") {
@@ -147,7 +147,7 @@ plot_theme <- function(base_size=9, base_family="",
 }
 
 
-# ---- print-tabular ----
+## ---- print-tabular ----
 
 # print LaTeX commands for typesetting a data frame as a table
 #
