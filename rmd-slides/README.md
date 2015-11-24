@@ -2,6 +2,8 @@
 
 Write the lecture in `talk.Rmd`, mixing markdown/LaTeX and R code chunks. `talk.Rmd` contains a model for how to set up for reasonable graphics, code syntax highlighting, and so on.
 
+[*Note, November 2015:* I have made a more neatly-wrapped up version of this workflow available as an [R package](http://github.com/agoldst/scuro) that supplies rmarkdown formats. It is slightly less flexible than this scheme but obviates having to make copies of a bunch of files for each project.]
+
 Generate a PDF of slides with
 
 ```Make
